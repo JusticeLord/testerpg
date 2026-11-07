@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "approval_date": "2026-11-07",
+  "approved_by": "Gabriel",
+  "scope": "visual direction and concepts only",
+  "files": [
+    {
+      "path": "concept-art/first-quest/01_brumaflor_v2.png",
+      "status": "approved_concept",
+      "runtime_ready": false,
+      "entity_reference": "loc_brumaflor",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "sha256": "ae92c1475204f2af1e3e90c24ed69db37845f3c0e26e66429e275106e8511a75",
+      "origin": "AI-generated concept; art-directed and reviewed in ChatGPT"
+    },
+    {
+      "path": "concept-art/first-quest/02_mata_freixo_v2.png",
+      "status": "approved_concept",
+      "runtime_ready": false,
+      "entity_reference": "loc_borda_mata",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "sha256": "c77a7f581302bd18ecd6bc42eebda35f51bfb762afe44163e9b41d49f86d4c74",
+      "origin": "AI-generated concept; art-directed and reviewed in ChatGPT"
+    },
+    {
+      "path": "concept-art/first-quest/03_personagens_v1.png",
+      "status": "approved_concept",
+      "runtime_ready": false,
+      "entity_reference": null,
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB",
+      "sha256": "02e653b4d54c3f7f4c0fea7e0c46f7c0f54a8cb3e2890714487db55b03bca6bc",
+      "origin": "AI-generated concept; art-directed and reviewed in ChatGPT"
+    },
+    {
+      "path": "concept-art/first-quest/04_interface_v2.png",
+      "status": "approved_concept",
+      "runtime_ready": false,
+      "entity_reference": null,
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB",
+      "sha256": "bf2468401fba86ca7374a5b2112ba1681f89854b560b0b8e9a3aa833c85568fe",
+      "origin": "AI-generated concept; art-directed and reviewed in ChatGPT"
+    }
+  ]
+}
