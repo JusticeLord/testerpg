@@ -1,1 +1,147 @@
-
+{
+  "schema_version": "0.1-proposal",
+  "locale": "pt-BR",
+  "npcs": [
+    {
+      "id": "npc_mara",
+      "name": "Mara",
+      "location_id": "loc_brumaflor"
+    },
+    {
+      "id": "npc_dario",
+      "name": "Dario",
+      "location_id": "loc_oficina_dario"
+    },
+    {
+      "id": "npc_iria",
+      "name": "Iria",
+      "location_id": "loc_brumaflor"
+    }
+  ],
+  "dialogues": [
+    {
+      "id": "dlg_mara_inicio",
+      "npc_id": "npc_mara",
+      "availability": "quest_not_started",
+      "entry_node_id": "node_mara_01",
+      "nodes": [
+        {
+          "id": "node_mara_01",
+          "speaker_id": "npc_mara",
+          "text": "O lampião da curva apagou de vez. Ontem quase tropeçaram ali no escuro.",
+          "next_node_id": "node_mara_02"
+        },
+        {
+          "id": "node_mara_02",
+          "speaker_id": "npc_mara",
+          "text": "Sei que é pedir muito. Mas aquela trilha não pode ficar assim.",
+          "choices": [
+            {
+              "id": "choice_mara_pratico",
+              "text": "Eu cuido disso.",
+              "next_node_id": "node_mara_04"
+            },
+            {
+              "id": "choice_mara_pergunta",
+              "text": "O que aconteceu com o lampião?",
+              "next_node_id": "node_mara_03"
+            }
+          ]
+        },
+        {
+          "id": "node_mara_03",
+          "speaker_id": "npc_mara",
+          "text": "Quebraram a presilha e arrebentaram a tira de couro. O vidro também está imundo.",
+          "next_node_id": "node_mara_04"
+        },
+        {
+          "id": "node_mara_04",
+          "speaker_id": "npc_mara",
+          "text": "Fale com Dario e Iria antes de ir à mata. Eles sabem do que precisamos.",
+          "next_node_id": null
+        }
+      ]
+    },
+    {
+      "id": "dlg_dario_oficina",
+      "npc_id": "npc_dario",
+      "availability": "quest_active",
+      "entry_node_id": "node_dario_01",
+      "nodes": [
+        {
+          "id": "node_dario_01",
+          "speaker_id": "npc_dario",
+          "text": "A presilha abriu no meio. Amarrar com barbante não dura uma noite.",
+          "next_node_id": "node_dario_02"
+        },
+        {
+          "id": "node_dario_02",
+          "speaker_id": "npc_dario",
+          "text": "Duas porções de minério bastam. Faz a peça aqui e leva para Mara.",
+          "next_node_id": null
+        }
+      ]
+    },
+    {
+      "id": "dlg_iria_erva",
+      "npc_id": "npc_iria",
+      "availability": "quest_active",
+      "entry_node_id": "node_iria_01",
+      "nodes": [
+        {
+          "id": "node_iria_01",
+          "speaker_id": "npc_iria",
+          "text": "O vidro também está tomado de fuligem. Tem uma erva na mata que ajuda a soltar aquilo.",
+          "next_node_id": "node_iria_02"
+        },
+        {
+          "id": "node_iria_02",
+          "speaker_id": "npc_iria",
+          "text": "Se encontrar erva-cinza, traga uma porção. Não precisa arrancar o canteiro inteiro.",
+          "next_node_id": null
+        }
+      ]
+    },
+    {
+      "id": "dlg_mara_retorno",
+      "npc_id": "npc_mara",
+      "availability": "quest_active_return",
+      "entry_node_id": "node_retorno_01",
+      "nodes": [
+        {
+          "id": "node_retorno_01",
+          "speaker_id": "npc_mara",
+          "text": "Trouxe tudo? A luz faz falta quando a neblina desce.",
+          "next_node_id": null
+        }
+      ],
+      "outcomes": [
+        {
+          "id": "outcome_entrega_completa",
+          "condition_id": "cond_entrega_completa",
+          "text": "Está aqui. Segura a haste um instante... pronto. Já dá para ver o caminho de novo. Obrigada.",
+          "complete_objective_id": "obj_entregar_mara"
+        },
+        {
+          "id": "outcome_entrega_incompleta",
+          "condition_id": "cond_entrega_incompleta",
+          "text": "Ainda falta alguma coisa. Eu fico por aqui; não precisa correr."
+        }
+      ]
+    },
+    {
+      "id": "dlg_mara_apos",
+      "npc_id": "npc_mara",
+      "availability": "quest_completed",
+      "entry_node_id": "node_apos_01",
+      "nodes": [
+        {
+          "id": "node_apos_01",
+          "speaker_id": "npc_mara",
+          "text": "Passei pela curva agora há pouco. O lampião está firme. Que alívio.",
+          "next_node_id": null
+        }
+      ]
+    }
+  ]
+}
