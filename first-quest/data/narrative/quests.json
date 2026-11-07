@@ -1,1 +1,166 @@
-
+{
+  "schema_version": "0.1-proposal",
+  "locale": "pt-BR",
+  "quests": [
+    {
+      "id": "quest_luz_caminho",
+      "title": "A Luz do Caminho",
+      "summary": "Ajude Mara a restaurar o lampião da Trilha do Freixo.",
+      "start_npc_id": "npc_mara",
+      "start_dialogue_id": "dlg_mara_inicio",
+      "end_npc_id": "npc_mara",
+      "end_dialogue_id": "dlg_mara_retorno",
+      "post_dialogue_id": "dlg_mara_apos",
+      "location_ids": [
+        "loc_brumaflor",
+        "loc_oficina_dario",
+        "loc_trilha_freixo",
+        "loc_borda_mata"
+      ],
+      "objectives": [
+        {
+          "id": "obj_falar_mara",
+          "description": "Conversar com Mara.",
+          "kind": "dialogue_completed",
+          "target_id": "dlg_mara_inicio",
+          "quantity": 1
+        },
+        {
+          "id": "obj_falar_dario",
+          "description": "Conversar com Dario.",
+          "kind": "dialogue_completed",
+          "target_id": "dlg_dario_oficina",
+          "quantity": 1
+        },
+        {
+          "id": "obj_falar_iria",
+          "description": "Conversar com Iria.",
+          "kind": "dialogue_completed",
+          "target_id": "dlg_iria_erva",
+          "quantity": 1
+        },
+        {
+          "id": "obj_explorar_freixo",
+          "description": "Chegar à borda da Mata do Freixo.",
+          "kind": "location_reached",
+          "target_id": "loc_borda_mata",
+          "quantity": 1
+        },
+        {
+          "id": "obj_derrotar_javali",
+          "description": "Afastar o javali da trilha.",
+          "kind": "enemy_defeated",
+          "target_id": "enemy_javali_freixo",
+          "quantity": 1
+        },
+        {
+          "id": "obj_minerar_ferro",
+          "description": "Extrair minério de ferro com uma picareta.",
+          "kind": "resource_gathered",
+          "target_id": "resource_minerio_ferro",
+          "quantity": 2,
+          "required_tool_id": "item_picareta"
+        },
+        {
+          "id": "obj_colher_erva",
+          "description": "Retirar uma porção de erva-cinza com a pá.",
+          "kind": "resource_gathered",
+          "target_id": "resource_erva_cinza",
+          "quantity": 1,
+          "required_tool_id": "item_pa"
+        },
+        {
+          "id": "obj_esfolar_couro",
+          "description": "Obter couro com a faca de esfolamento.",
+          "kind": "resource_gathered",
+          "target_id": "resource_couro_cru",
+          "quantity": 1,
+          "required_tool_id": "item_faca_esfolamento",
+          "proposed_source_id": "enemy_javali_freixo"
+        },
+        {
+          "id": "obj_forjar_presilha",
+          "description": "Fabricar uma presilha na oficina.",
+          "kind": "recipe_crafted",
+          "target_id": "recipe_presilha_trilha",
+          "quantity": 1
+        },
+        {
+          "id": "obj_entregar_mara",
+          "description": "Entregar os materiais a Mara.",
+          "kind": "handover",
+          "target_id": "npc_mara",
+          "quantity": 1,
+          "condition_id": "cond_entrega_completa"
+        }
+      ],
+      "progression": {
+        "intro_objective_ids": [
+          "obj_falar_mara",
+          "obj_falar_dario",
+          "obj_falar_iria"
+        ],
+        "exploration_objective_id": "obj_explorar_freixo",
+        "field_objective_ids": [
+          "obj_derrotar_javali",
+          "obj_minerar_ferro",
+          "obj_colher_erva",
+          "obj_esfolar_couro"
+        ],
+        "craft_objective_id": "obj_forjar_presilha",
+        "final_objective_id": "obj_entregar_mara",
+        "field_objectives_any_order": true
+      },
+      "conditions": [
+        {
+          "id": "cond_entrega_completa",
+          "kind": "all_items_present",
+          "items": [
+            {
+              "id": "item_presilha_trilha",
+              "quantity": 1
+            },
+            {
+              "id": "resource_couro_cru",
+              "quantity": 1
+            },
+            {
+              "id": "resource_erva_cinza",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "id": "cond_entrega_incompleta",
+          "kind": "negation",
+          "condition_id": "cond_entrega_completa"
+        }
+      ],
+      "recipe_proposals": [
+        {
+          "id": "recipe_presilha_trilha",
+          "profession": "ferreiro",
+          "ingredients": [
+            {
+              "id": "resource_minerio_ferro",
+              "quantity": 2
+            }
+          ],
+          "output": {
+            "id": "item_presilha_trilha",
+            "quantity": 1
+          },
+          "status": "requires_gameplay_approval"
+        }
+      ],
+      "reward": {
+        "id": "reward_lampiao_aceso",
+        "kind": "world_state",
+        "target_id": "loc_lampiao_freixo",
+        "state": "aceso",
+        "grant_once": true
+      },
+      "integration_status": "proposed_not_implemented"
+    }
+  ]
+}
